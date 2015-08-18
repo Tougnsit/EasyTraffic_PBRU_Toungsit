@@ -20,8 +20,34 @@ public class MainActivity extends AppCompatActivity {  // extends การส�
         // Initial Widget
         initialWidget();  // ตัวแปร ชื่อ initialWidget กด alt+enter เพื่อสร้าง Method
 
-
+        // Create ListView
+        createListView(); // กด alt+enter เพื่อสร้าง Method
     } // Main Method
+
+    private void createListView() {
+        String[] strTitle = new String[20];  // Ctrl+space สร้าง new
+        strTitle[0] = "ห้ามเลี้ยวซ้าย";
+        strTitle[1] = "ห้ามเลี้ยวขวา";
+        strTitle[2] = "ตรงไป";
+        strTitle[3] = "เลี้ยวขวา";
+        strTitle[4] = "เลี้ยวซ้าย";
+        strTitle[5] = "ออก";
+        strTitle[6] = "เข้า";
+        strTitle[7] = "ออก";
+        strTitle[8] = "หยุด";
+        strTitle[9] = "ห้ามสูงเกิน";
+        strTitle[10] = "ทางแยก";
+        strTitle[11] = "ห้ามกลับรถ";
+        strTitle[12] = "ห้ามจอด";
+        strTitle[13] = "รถสวน";
+        strTitle[14] = "ห้ามแซง";
+        strTitle[15] = "เข้า";
+        strTitle[16] = "หยุดตรวจ";
+        strTitle[17] = "จำกัดความเร็ว";
+        strTitle[18] = "จำกัดความกว้าง";
+        strTitle[19] = "จำกัดความสูง";
+
+    } //  Create ListView
 
     private void initialWidget() {  //
         trafficListView = (ListView) findViewById(R.id.listView);

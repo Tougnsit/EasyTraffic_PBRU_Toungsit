@@ -1,14 +1,17 @@
 package th.ac.pbru.toungsit.easytraffic;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Lab on 8/18/2015.
  */
-public class MyAdapter extends BaseAdapter{
+public class MyAdapter extends BaseAdapter {
     //Explicit
     private Context objContext;
     private int[] iconInts;  // กด ปุ่ม Ctrl+Enter เพื่อสร้างชื่อตัวแปรให้อัตโนมัติ
@@ -38,9 +41,15 @@ public class MyAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-       // LayoutInflater objLayoutInflater = (LayoutInflater)
+        LayoutInflater objLayoutInflater = (LayoutInflater) objContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = objLayoutInflater.inflate(R.layout.listview_traffic, parent, false);
+        //Show Image
+        ImageView iconImageView = (ImageView) view.findViewById(R.id.imvIcon);
+        iconImageView.setImageResource(iconInts[position]);
 
+        TextView titleTextView = (TextView) view.findViewById(R.id.txtShowTitle);
+        titleTextView.setText(titleStrings[position]);
 
-        return null;
+        return view;
     } //getView
 } // Main Class
