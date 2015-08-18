@@ -1,9 +1,12 @@
 package th.ac.pbru.toungsit.easytraffic;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {  // extends การสืบทอดข้อมูล
@@ -56,6 +59,17 @@ public class MainActivity extends AppCompatActivity {  // extends การส�
 
         MyAdapter objMyAdapter = new MyAdapter(MainActivity.this, iniImage, strTitle);
         trafficListView.setAdapter(objMyAdapter);
+
+        // Active OnClick on ListView
+        trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Intent to detail
+                Intent objIntent = new Intent(MainActivity.this,DetailActivity.class);
+                startActivity(objIntent);
+            } // event
+        });
+
     } //  Create ListView
 
 
