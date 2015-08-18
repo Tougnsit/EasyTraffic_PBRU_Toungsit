@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {  // extends การส�
     } // Main Method
 
     private void createListView() {
-        String[] strTitle = new String[20];  // Ctrl+space สร้าง new
+        final String[] strTitle = new String[20];  // Ctrl+space สร้าง new
         strTitle[0] = "ห้ามเลี้ยวซ้าย";
         strTitle[1] = "ห้ามเลี้ยวขวา";
         strTitle[2] = "ตรงไป";
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {  // extends การส�
         strTitle[18] = "จำกัดความกว้าง";
         strTitle[19] = "จำกัดความสูง";
 
-        int[] iniImage = {R.drawable.traffic_01, R.drawable.traffic_02,
+        final int[] iniImage = {R.drawable.traffic_01, R.drawable.traffic_02,
                 R.drawable.traffic_03, R.drawable.traffic_04, R.drawable.traffic_05,
                 R.drawable.traffic_06, R.drawable.traffic_07, R.drawable.traffic_08,
                 R.drawable.traffic_09, R.drawable.traffic_10, R.drawable.traffic_11, R.drawable.traffic_12,
@@ -65,8 +65,13 @@ public class MainActivity extends AppCompatActivity {  // extends การส�
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Intent to detail
-                Intent objIntent = new Intent(MainActivity.this,DetailActivity.class);
+                Intent objIntent = new Intent(MainActivity.this, DetailActivity.class);
+
+                objIntent.putExtra("Title", strTitle[position]);
+                objIntent.putExtra("Image", iniImage[position]);
+                objIntent.putExtra("Detail",position);
                 startActivity(objIntent);
+
             } // event
         });
 

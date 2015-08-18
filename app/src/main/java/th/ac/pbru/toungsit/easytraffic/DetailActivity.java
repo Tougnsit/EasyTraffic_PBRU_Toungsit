@@ -4,13 +4,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
+    TextView titleTextView, detailTextView;
+    ImageView trafficImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        //bind
+        bindWidget();
+
+        //show title
+        showTitle();
+
+    }
+
+    private void showTitle() {
+        
+    }
+
+    private void bindWidget() {
+        titleTextView = (TextView) findViewById(R.id.txtTitleDetail);  // alt+enter ทำ Cast to
+        detailTextView = (TextView) findViewById(R.id.txtTitleDetail);
+        trafficImageView = (ImageView) findViewById(R.id.imvtrafficDetail);
     }
 
     @Override
