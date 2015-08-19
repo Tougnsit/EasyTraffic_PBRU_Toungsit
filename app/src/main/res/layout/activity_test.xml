@@ -73,7 +73,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ANWER"
+        android:onClick="clickAnswer"
+        android:text="ANSWER"
         android:id="@+id/button2"
         android:layout_alignParentBottom="true" />
 </RelativeLayout>
