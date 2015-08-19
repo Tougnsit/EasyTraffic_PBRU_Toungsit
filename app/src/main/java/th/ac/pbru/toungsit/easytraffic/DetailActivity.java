@@ -22,10 +22,28 @@ public class DetailActivity extends AppCompatActivity {
         //show title
         showTitle();
 
+        showImage();
+
+        showdetail();
+
+    }
+
+    private void showdetail() {
+        String[] strDetail = getResources().getStringArray(R.array.detail);
+        detailTextView.setText(strDetail[getIntent().getIntExtra("Detail", 0)]);
+
+    }
+
+    private void showImage() {
+        int intImage = getIntent().getIntExtra("Image", R.drawable.traffic_01);
+        trafficImageView.setImageResource(intImage);
     }
 
     private void showTitle() {
-        
+        //Receive from Intent
+        String strTitle = getIntent().getStringExtra("Title");
+        titleTextView.setText(strTitle);
+
     }
 
     private void bindWidget() {

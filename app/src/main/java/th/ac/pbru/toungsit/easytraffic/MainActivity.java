@@ -25,7 +25,14 @@ public class MainActivity extends AppCompatActivity {  // extends การส�
 
         // Create ListView
         createListView(); // กด alt+enter เพื่อสร้าง Method
+
     } // Main Method
+
+    public void clickTest(View view) {
+        startActivity(new Intent(this, TestActivity.class));
+
+    }
+
 
     private void createListView() {
         final String[] strTitle = new String[20];  // Ctrl+space สร้าง new
